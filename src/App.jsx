@@ -4,9 +4,16 @@ import "./App.css";
 import MyNav from "./components/MyNav";
 import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
-import TypeBook from "./components/TypeBook";
+// import AllTheBooks from "./components/AllTheBooks";
+// import SingleBook from "./components/SingleBook";
+import fantasy from "./data/fantasy.json";
+import BookList from "./components/BookList";
 
 function App() {
+  let myArrFantasy = [];
+  for (let i = 0; i < 10; i++) {
+    myArrFantasy.push(fantasy[i]);
+  }
   return (
     <div className="App">
       <header>
@@ -14,18 +21,13 @@ function App() {
       </header>
       <main className="main-height">
         <Welcome />
-        <TypeBook />
+        {/* <AllTheBooks /> */}
+        {/* <SingleBook myObj={fantasy[0]} /> */}
+        <h3 style={{ marginBottom: "20px" }}>Fantasy</h3>
+        <BookList myArr={myArrFantasy} />
       </main>
-      <footer
-        style={{
-          backgroundColor: "black",
-          width: "100%",
-          color: "white",
-          paddingBlock: "15px",
-        }}
-      >
-        <MyFooter text="Il mio footer" />
-      </footer>
+
+      <MyFooter text="Il mio footer" />
     </div>
   );
 }

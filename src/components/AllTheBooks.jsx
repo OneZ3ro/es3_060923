@@ -5,7 +5,7 @@ import fantasy from "../data/fantasy.json";
 // import romance from "../data/romance.json";
 // import scifi from "../data/scifi.json";
 
-const TypeBook = () => {
+const AllTheBooks = () => {
   return (
     <div style={{ paddingInline: "25px" }}>
       <div className="d-flex gap-4 flex-nowrap" style={{ overflowX: "scroll" }}>
@@ -39,4 +39,4 @@ const TypeBook = () => {
   );
 };
 
-export default TypeBook;
+export default AllTheBooks;
