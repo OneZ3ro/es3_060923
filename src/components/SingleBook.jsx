@@ -4,21 +4,20 @@ import { Button, Card, Col } from "react-bootstrap";
 class SingleBook extends Component {
   state = {
     selected: false,
-    counter: 0,
   };
 
   render() {
     return (
       <Col
         onClick={() => {
-          this.setState({ counter: this.state.counter + 1 });
+          this.setState({ selected: !this.state.selected });
         }}
       >
         <Card
           style={
-            this.state.counter % 2 === 0
-              ? { border: "none" }
-              : { border: "3px solid red" }
+            this.state.selected
+              ? { border: "3px solid red" }
+              : { border: "none" }
           }
         >
           <Card.Img variant="top" src={this.props.myObj.img} />
